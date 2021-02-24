@@ -1,22 +1,26 @@
 {
-  "name": "test",
+  "name": "bar-chart-d3",
   "version": "1.0.0",
-  "description": "",
+  "description": "tool for generating basic d3 bar-charts from various data sets",
   "author": "Ran Guin <ran.guin@gmail.com>",
   "keywords": [
-    "npm",
-    "package",
-    "template"
+    "d3",
+    "data",
+    "visualization",
+    "bar",
+    "chart",
+    "plot"
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/ran-guin/npm-package-template.git"
+    "url": "https://gitlab.com/ran-guin/bar-chart-d3.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/ran-guin/npm-package-template/issues"
+    "url": "https://gitlab.com/ran-guin/bar-chart-d3/issues"
   },
-  "homepage": "https://gitlab.com/ran-guin/npm-package-template#readme",
+  "homepage": "https://gitlab.com/ran-guin/bar-chart-d3#readme",
   "main": "./dist/index.js",
+  "type": "module",
   "scripts": {
     "build": "make buildplus",
     "prepublish": "npm run build",
@@ -29,6 +33,9 @@
   },
   "dependencies": {
     "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.13.1"
+    "@babel/core": "^7.13.1",
+    "d3": "^6.5.0",
+    "d3-data-parser": "^1.0.0",
+    "svg-d3": "^1.0.0"
   }
 }
