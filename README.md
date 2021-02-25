@@ -1,41 +1,25 @@
-# Starting point for building npm package
+# Basic Tool for Plotting Bar Charts using D3
 
-## Getting started
+# Basic Usage:
 
-- `git clone https://github.com/ran-guin/npm-package-template <your-pkg-name>`
+- `npm install -S bar-plot-d3`
 
-- `cd npm-package-template`
+- import in code
+  - `import 'd3Bar from 'bar-plot-d3'`
+- Add canvas element to html page (d3Canvas is the default id expected)
+  - `<div id='#d3Canvas'>`
 
-- `npm install` (to install mocha / chai for testing purposes)
+- Call addBars
+  - `const data_example = [{country: 'USA': 20.8}, {country: 'China': 14.9}, {country: 'Japan': 4.9}, {country: 'Germany': 3.8}, {country: 'France': 2.6}]`
+  - `d3Bar.addBars({data: data})`
 
-- `npm run build` (test to make sure it is working out of the box)
+  # Options:
 
-## Included
+- specify canvas size (defaults to 900 x 600)
+  - (automatically adjusts size to fit canvas)
+  - `d3Bar({data: data, canvasHeight: 500, canvasWidth: 800})`
 
-- default index.js src file - (overwrite with your own code)
-- default index.js test file - (overwrite with your own code)
-- Makefile to execute build to 'dist' directory
-- default LICENSE file (ISC) .... change as required...
-
-## Directions
-
-### Setup (to adapt this template for your own use)
-- reset url for your own repository
-  - `git remote set_url origin 'https:github.com/<you>/<pkgName>`
-
-- update package.json file (*everything above "main" specification*)
-- add your own name to the LICENSE.md file
-
-- (optionally save your own custom version of this template under your own repository)
-
-- add index.js file(s) to src/ directory
-- add index.js file(s) to test/ directory (optional but recommended)
-- `npm install -S ...` (install 3rd party packages as required)
-- `npm run build`
-- recursively add tests & edit as required to ensure working...
-
-### Add to npm
-
-
-
-
+- check default settings
+  - `var defaults = d3Bar.checkDefaults()`
+  - you can also check if you have customized the canvas size
+  - `var defaults = d3Bar.checkDefaults({canvasHeight: 500, canvasWidth: 800})`

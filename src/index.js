@@ -52,6 +52,12 @@ function testSvg (input) {
   return 'ok'
 }
 
+function checkDefaults (options) {
+  const set = d3Svg.setOptions('bar', options)
+  console.log('default settings: ' + JSON.stringify(set))
+  return set
+}
+
 function addBars (options) {
   console.log('add bars: ' + JSON.stringify(options))
   var svg = options.svg || d3Svg.initSvg(options)
@@ -196,4 +202,4 @@ function test () {
   return 'ok'
 }
 
-export default { test, addBars, addText, addAxis, testSvg};
+export default { test, checkDefaults, addBars, addText, addAxis, testSvg};
