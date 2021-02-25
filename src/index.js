@@ -54,7 +54,7 @@ function testSvg (input) {
 
 function addBars (options) {
   console.log('add bars: ' + JSON.stringify(options))
-  var svg = options.svg || this.initSvg(options)
+  var svg = options.svg || d3Svg.initSvg(options)
   var data = options.data       // eg [{fname: 'Peter', state: 'BC', age: 41}, {fname: 'Paul', state: 'Alberta', age: 33}, {fname: 'Mary', state: 'Ontario', age: 27}]
 
   const set = d3Svg.setOptions('bar', options)
@@ -108,14 +108,19 @@ function addBars (options) {
 
   console.log('... add axes ...')
   this.addAxis(options)
-  
+ 
+  if (options.embedData) {
+    console.log('embed data into element: ' + options.embedData)
+    this.d3Svg.embedData(data, options.embedData)
+  }
+ 
   console.log('complete.')
   return {records: set.records, max: set.maxValue, dataHeight: set.dataHeight, dataWidth: set.dataWidth, height: set.height, width: set.width }
 }
 
 function addText (options) {
   console.log('add text: ' + JSON.stringify(options))
-  var svg = options.svg || this.initSvg(options)
+  var svg = options.svg || d3Svg.initSvg(options)
   var data = options.data
 
   var set = d3Svg.setOptions('bar', options)  // uses bar options for spacing 
@@ -145,7 +150,7 @@ function addText (options) {
 
 function addAxis (options) {
   console.log('add axis: ' + JSON.stringify(options))
-  var svg = options.svg || this.initSvg(options)
+  var svg = options.svg || d3Svg.initSvg(options)
   var data = options.data
   
   var set = d3Svg.setOptions('bar', options)  // uses bar options for spacing 
