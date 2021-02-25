@@ -1,6 +1,6 @@
 {
   "name": "bar-plot-d3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "tool for generating basic d3 bar-plots from various data sets",
   "author": "Ran Guin <ran.guin@gmail.com>",
   "keywords": [
