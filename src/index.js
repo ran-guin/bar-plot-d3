@@ -117,7 +117,7 @@ function addBars (options) {
  
   if (options.embedData) {
     console.log('embed data into element: ' + options.embedData)
-    this.d3Svg.embedData(data, options.embedData)
+    d3Svg.embedData(data, options.embedData)
   }
  
   console.log('complete.')
